@@ -21,7 +21,9 @@
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
       "publishAllPorts": true,
-      "useSSL": true
+      "useSSL": true,
+      "httpPort": 49269,
+      "sslPort": 44374
     }
   },
   "iisSettings": {
@@ -29,7 +31,7 @@
     "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:56833",
-      "sslPort": 44385
+      "sslPort": 44374
     }
   }
 }

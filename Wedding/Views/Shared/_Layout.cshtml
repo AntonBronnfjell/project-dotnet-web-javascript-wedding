@@ -1,49 +1,239 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Wedding</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Wedding.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Wedding</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+<meta charset="utf-8">
+<title>ODIN v1.5 - A Simple Creative One Page Responsive HTML5 Template by Designova</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ODIN by Designova - Responsive HTML5 template">
+<meta name="author" content="Designova">
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Wedding - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+<!-- Standard Favicon--> 
+<link rel="shortcut icon" href="images/favicon/favicon.ico">
+
+
+<!-- Bootstrap CSS Files -->
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<!-- Custom Fonts Setup via Font-face CSS3 -->
+<link href="fonts/fonts.css" rel="stylesheet">
+<!-- CSS files for plugins -->
+<link href="~/stylesheets/animate.css" rel="stylesheet">
+<link href="~/stylesheets/slimmenu.css" rel="stylesheet">
+<link href="~/stylesheets/owl.carousel.css" rel="stylesheet">
+<link href="~/stylesheets/owl.theme.css" rel="stylesheet">
+<link href="~/stylesheets/venobox.css" rel="stylesheet" />
+<link href="~/stylesheets/slidingmenu.css" rel="stylesheet">
+<!-- Main Template Styles -->
+<link href="~/stylesheets/main.css" rel="stylesheet">
+<!-- Main Template BG Images -->
+<link href="~/stylesheets/main-bg.css" rel="stylesheet">
+<!-- Main Template Responsive Styles -->
+<link href="~/stylesheets/main-responsive.css" rel="stylesheet">
+<!-- Main Template Retina Optimizaton Rules -->
+<link href="~/stylesheets/main-retina.css" rel="stylesheet">
+<!-- LESS stylesheet for managing color presets -->
+<link rel="~/stylesheet/less" type="text/css" href="~/less/color.less">
+<!-- LESS JS engine-->
+<script src="~/less/less-1.5.0.min.js"></script>
+<!-- Google Web Fonts-->
+<link href='https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+
+<body>
+
+  <!-- Preloader
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div id="preloader"> 
+    <div id="status"></div> 
+  </div>
+
+  
+<!-- mobile only navigation : starts -->
+<nav class="mobile-nav hidden-lg">
+            <ul class="slimmenu">
+              <li>
+                  <a class="#" href="index.html">home</a>
+              </li> 
+              <li>
+                  <a class="scroll" href="#about">about</a>
+              </li>
+              <li>
+                  <a class="scroll" href="#services">services</a>
+              </li>  
+              <li>
+                  <a class="scroll" href="#portfolio">portfolio</a>
+              </li>  
+              <li>
+                  <a class="scroll" href="#team">team</a>
+              </li> 
+              <li>
+                  <a class="scroll" href="#news">news</a>
+              </li> 
+              <li>
+                  <a class="scroll" href="#contact">contact</a>
+              </li> 
+            </ul>
+</nav>
+<!-- mobile only navigation : ends -->
+
+
+
+
+<!-- Master Wrap : starts -->
+<section id="mastwrap">
+
+ 
+
+
+
+
+<section id="intro" class="intro trans-white">
+
+<!-- masthead-section (this nav bar is visible only on home page) : starts -->
+		<header id="intro-header" class="intro-header visible-lg">
+			<div class="container">
+				<div class="row">
+						<article class="col-md-3 text-left">
+						    	<img alt="odin" title="odin" class="main-logo img-responsive" src="~/images/logo-dark.png"/>
+						</article>
+						<article class="col-md-9 text-right">
+						    	<ul class="standard-nav standard-nav-dark-text visible-lg">
+								<li><a href="#about" class="scroll">About</a></li>
+								<li><a href="#services" class="scroll">Services</a></li>
+								<li><a href="#portfolio" class="scroll">Portfolio</a></li>
+								<li><a href="#team" class="scroll">Team</a></li>
+								<li><a href="#news" class="scroll">News</a></li>
+								<li><a href="#contact" class="scroll">Contact</a></li>
+							</ul>
+						</article>
+				</div>
+			</div>
+		</header>
+		<!-- masthead-section:ends -->	
+
+	<div class="valign">
+
+		<div id="intro-carousel" class="intro-carousel owl-carousel  owl-nav-sticky-wide">
+
+							<div class="item stats-carousel-item hero-caps  text-center">
+								<h1 class="black">Odin</h1>
+								<h6 class="black">Creative One Page Template</h6>
+							</div>
+							<!-- item:ends -->
+
+							<div class="item stats-carousel-item hero-caps  text-center">
+								<h1 class="black">Easy</h1>
+								<h6 class="black">Easy to edit and customize</h6>
+							</div>
+							<!-- item:ends -->
+
+							<div class="item stats-carousel-item hero-caps  text-center">
+								<h1 class="black">Cool</h1>
+								<h6 class="black">Minimal and clean Design</h6>
+							</div>
+							<!-- item:ends -->
+
+
+							
+
+		</div>
+		<!-- carousel:ends -->
+
+
+	</div>
+	<!-- valign:ends -->
+
+	<a  class="scroll" href="#about" >
+		<div class="mouse-icon white hidden-xs" style="opacity: 1;">
+		            <div class="wheel"></div>
+		 </div>
+	</a>
+
+</section>
+
+
+
+
+<!-- masthead-section (this nav bar is initially hidden but will be visible only on inner pages) : starts -->
+<header id="standard-header" class="standard-header">
+
+	<div class="container">
+		<div class="row">
+				<article class="col-md-3 text-left">
+				    	<img alt="odin" title="odin" class="main-logo img-responsive" src="~/images/logo-dark.png"/>
+				</article>
+				<article class="col-md-9 text-right">
+				    	<ul class="standard-nav standard-nav-dark-text visible-lg">
+						<li><a href="#intro" class="scroll highlighted" id="intro-linker">Home</a></li>
+						<li><a href="#about" class="scroll" id="about-linker">About</a></li>
+						<li><a href="#services" class="scroll" id="services-linker">Services</a></li>
+						<li><a href="#portfolio" class="scroll" id="portfolio-linker">Portfolio</a></li>
+						<li><a href="#team" class="scroll" id="team-linker">Team</a></li>
+						<li><a href="#news" id="news-linker">News</a></li>
+						<li><a href="#contact" class="scroll" id="contact-linker">Contact</a></li>
+					</ul>
+				</article>
+		</div>
+	</div>
+
+</header>
+<!-- masthead-section:ends -->
+
+
+
+@RenderBody()
+
+
+
+<!-- inner-section:starts -->
+<section class="inner-section foot-top">
+	<div class="container">
+		<div class="row">
+				<article class="col-md-12 text-center">
+				    	<ul class="foot-social">
+						<li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/01.png" ></a></li>
+						<li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/02.png" ></a></li>
+						<li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/03.png" ></a></li>
+						<li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/04.png" ></a></li>
+					</ul>
+				</article>
+		</div>
+		<div class="row">
+				<article class="col-md-12 text-center foot-logos">
+					<p class="credits">A premium template by Designova. Copyright &copy; 2015</p>
+				</article>
+		</div>
+	</div>
+</section>
+<!-- inner-section:ends -->
+
+</footer>
+
+
+
+</section>
+<!-- Master Wrap : ends -->
+
+
+
+<!-- Core JS Libraries -->
+<script src="~/javascripts/libs/common.js"></script>
+<script src="~/bootstrap/js/bootstrap.js" ></script> 
+<!-- JS Custom Codes --> 
+<script src="~/javascripts/custom/custom-init.js" ></script> 
+<script src="~/javascripts/custom/main.js" ></script> 
+
+@*<script>
+$.backstretch([
+"https://placehold.co1500x1050"
+, "https://placehold.co1500x1050"
+, "https://placehold.co1500x1050"
+], {duration: 3000, fade: 750});
+</script>*@
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

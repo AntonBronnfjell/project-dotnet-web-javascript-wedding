@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "wwwroot/less/color.css",
+    "inputFile": "wwwroot/less/color.less"
+  },
+  {
+    "outputFile": "wwwroot/less/less-1.5.0.min.es5.js",
+    "inputFile": "wwwroot/less/less-1.5.0.min.js"
+  }
+]
