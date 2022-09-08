@@ -1,10 +1,24 @@
 ﻿[
   {
     "outputFile": "wwwroot/less/color.css",
-    "inputFile": "wwwroot/less/color.less"
+    "inputFile": "wwwroot/less/color.less",
+    "minify": {
+      "enabled": true
+    },
+    "includeInProject": true,
+    "options": {
+      "sourceMap": false
+    }
   },
   {
     "outputFile": "wwwroot/less/less-1.5.0.min.es5.js",
-    "inputFile": "wwwroot/less/less-1.5.0.min.js"
+    "inputFile": "wwwroot/less/less-1.5.0.min.js",
+    "minify": {
+      "enabled": true
+    },
+    "includeInProject": true,
+    "options": {
+      "sourceMap": false
+    }
   }
 ]
