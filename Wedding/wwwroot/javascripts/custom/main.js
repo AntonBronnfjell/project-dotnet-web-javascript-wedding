@@ -12,10 +12,9 @@
 /*global window: false */
 
 (function(){
-  "use strict";
+    "use strict";
 
-
-$(function ($) {
+    $(function ($) {
 
     //Detecting viewpot dimension
      var vH = $(window).height();
@@ -42,6 +41,17 @@ $(document).ready(function() {
       folioThumbHeight = $(this).height();
       $(this).find('.item_info').css('height',folioThumbHeight+3);
      });
+
+    //Counter
+    var $counter = $('.js-counter');
+    var $date = $counter.attr('data-date');
+
+    $counter.countdown($date, function (event) {
+        $('.js-counter-days').html(event.strftime('%D'));
+        $('.js-counter-hours').html(event.strftime('%H'));
+        $('.js-counter-minutes').html(event.strftime('%M'));
+        $('.js-counter-seconds').html(event.strftime('%S'));
+    });
    
    
   if(vW > 1000)
