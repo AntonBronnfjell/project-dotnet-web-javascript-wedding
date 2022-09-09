@@ -14,7 +14,7 @@
   color: #CCCCCC;
 }
 .color {
-  color: #FD4326;
+  color: #202A44;
 }
 .white-bg {
   background: #FFFFFF;
@@ -32,7 +32,7 @@
   background: #CCCCCC;
 }
 .color-bg {
-  background: #FD4326;
+  background: #202A44;
 }
 .trans-dark {
   background: rgba(0, 0, 0, 0.5);
@@ -41,16 +41,16 @@
   background: rgba(255, 255, 255, 0.5);
 }
 ::selection {
-  background: #FD4326;
+  background: #202A44;
   color: #2d2d2d;
 }
 ::-moz-selection {
-  background: #FD4326;
+  background: #202A44;
   color: #2d2d2d;
 }
 .btn-odin-color {
-  background-color: #FD4326;
-  color: #FD4326;
+  background-color: #202A44;
+  color: #202A44;
   color: #FFFFFF;
 }
 .btn-odin-color:hover {
@@ -58,23 +58,23 @@
   color: #FFFFFF;
 }
 .btn-odin-white:hover {
-  background-color: #FD4326;
-  color: #FD4326;
+  background-color: #202A44;
+  color: #202A44;
   color: #FFFFFF;
 }
 .btn-odin-white:hover {
-  background-color: #FD4326;
-  color: #FD4326;
+  background-color: #202A44;
+  color: #202A44;
   color: #FFFFFF;
 }
 .ajax-loader-html {
-  background: #FD4326;
+  background: #202A44;
 }
 .pace .pace-progress {
   background-color: #f1f1f1;
 }
 .standard-nav li > a.highlighted {
-  color: #FD4326;
+  color: #202A44;
 }
 .intro .mouse-icon.dark {
   border-color: #2d2d2d;
@@ -98,13 +98,13 @@
   border-color: #f1f1f1;
 }
 .features-icon.current > h5 {
-  color: #FD4326;
+  color: #202A44;
 }
 .active-service {
-  background: #FD4326;
+  background: #202A44;
 }
 .testimonial-wrap > p > span {
-  border-color: #FD4326;
+  border-color: #202A44;
 }
 ul#portfolioFilter li {
   background: #f1f1f1;
@@ -114,7 +114,7 @@ ul#portfolioFilter li:hover {
   color: #FFFFFF;
 }
 ul#portfolioFilter li.active-filter {
-  background: #FD4326;
+  background: #202A44;
   color: #2d2d2d;
 }
 div#portfolio_thumbs ul li div.item_info {
@@ -129,7 +129,7 @@ div#portfolio_thumbs ul li div.item_info p > span {
   color: #FFFFFF;
 }
 .team-stage > h6 > span {
-  border-color: #FD4326;
+  border-color: #202A44;
   color: #2d2d2d;
 }
 .standard-nav-white-text li > a {
@@ -139,7 +139,7 @@ div#portfolio_thumbs ul li div.item_info p > span {
   color: #2d2d2d;
 }
 .project-type > span {
-  border-color: #FD4326;
+  border-color: #202A44;
 }
 .item:hover > a > .thumb-title {
   background: #181818;
@@ -150,7 +150,7 @@ div#portfolio_thumbs ul li div.item_info p > span {
   border: solid 1px #FFFFFF;
 }
 .alert {
-  background: #FD4326;
+  background: #202A44;
 }
 .alert > p {
   color: #FFFFFF !important;
@@ -165,23 +165,23 @@ div#portfolio_thumbs ul li div.item_info p > span {
   border-color: #FFFFFF;
 }
 .hero-caps h6.color > span {
-  border-color: #FD4326;
+  border-color: #202A44;
 }
 .hero-caps h2.white > span {
-  border-color: #FD4326;
+  border-color: #202A44;
 }
 .hero-caps h2.dark > span {
-  border-color: #FD4326;
+  border-color: #202A44;
 }
 .project-page-caps h3.white > span {
-  border-color: #FD4326;
+  border-color: #202A44;
 }
 .project-page-caps h3.dark > span {
-  border-color: #FD4326;
+  border-color: #202A44;
 }
 .news-post {
   border-color: #FFFFFF;
 }
 .news-post:hover {
-  border-color: #FD4326;
+  border-color: #202A44;
 }
