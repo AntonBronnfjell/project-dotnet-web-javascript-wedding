@@ -94,14 +94,14 @@
 	position: absolute;
 	width: 50px;
 	height: 50px;
-	background: transparent url(../images/prev-dark.png) no-repeat center center !important;
+	background: transparent url(../images/prev.png) no-repeat center center !important;
 	top: 50%;
 }
 .owl-next{
 	position: absolute;
 	width: 50px;
 	height: 50px;
-	background: transparent url(../images/next-dark.png) no-repeat center center !important;
+	background: transparent url(../images/next.png) no-repeat center center !important;
 	top: 50%;
 }
 .owl-nav-sticky-wide .owl-prev{
