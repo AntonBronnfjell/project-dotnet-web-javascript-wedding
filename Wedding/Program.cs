@@ -2,12 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using Wedding.Models;
 
-//var configuration = new ConfigurationBuilder()
-//                .SetBasePath(Directory.GetCurrentDirectory())
-//                .AddJsonFile("secrets.json")
-//                .Build();
 var builder = WebApplication.CreateBuilder(args);
-//var connectionString = configuration.GetConnectionString("DevServer");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
