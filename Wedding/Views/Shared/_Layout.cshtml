@@ -65,17 +65,14 @@
                 <a class="scroll" href="#location">Ubicaciones</a>
             </li>
             <li>
-                <a class="scroll" href="#team">Itinerario</a>
+                <a class="scroll" href="#team">Cortejo</a>
             </li>
-            <li>
-                <a class="scroll" href="#news">Momentos</a>
-            </li>
-            <li>
-                <a class="scroll" href="#news">Invitados</a>
-            </li>
-            <li>
-                <a class="scroll" href="#contact">contact</a>
-            </li>
+            @if (ViewBag.Guests != null)
+            {
+                <li>
+                    <a class="scroll" href="#news">Invitados</a>
+                </li>
+            }
         </ul>
     </nav>
     <!-- mobile only navigation : ends -->
@@ -96,10 +93,11 @@
                                 <li><a href="#timer" class="scroll">Contador</a></li>
                                 <li><a href="#about" class="scroll">Nosotros</a></li>
                                 <li><a href="#location" class="scroll">Ubicaciones</a></li>
-                                <li><a href="#team" class="scroll">Itinerario</a></li>
-                                <li><a href="#news" class="scroll">Momentos</a></li>
-                                <li><a href="#news" class="scroll">Invitados</a></li>
-                                <li><a href="#contact" class="scroll">Contact</a></li>
+                                <li><a href="#team" class="scroll">Cortejo</a></li>
+                                @if (ViewBag.Guests != null)
+                                {
+                                    <li><a href="#news" class="scroll">Invitados</a></li>
+                                }
                             </ul>
                         </article>
                     </div>
@@ -154,10 +152,11 @@
                             <li><a href="#timer" class="scroll" id="about-linker">Contador</a></li>
                             <li><a href="#about" class="scroll" id="services-linker">Nosotros</a></li>
                             <li><a href="#location" class="scroll" id="portfolio-linker">Ubicaciones</a></li>
-                            <li><a href="#team" class="scroll" id="team-linker">Itinerario</a></li>
-                            <li><a href="#news" id="news-linker">Momentos</a></li>
-                            <li><a href="#news" id="news-linker">Invitados</a></li>
-                            <li><a href="#contact" class="scroll" id="contact-linker">Contact</a></li>
+                            <li><a href="#team" class="scroll" id="team-linker">Cortejo</a></li>
+                            @if (ViewBag.Guests != null)
+                            {
+                                <li><a href="#news" id="news-linker">Invitados</a></li>    
+                            }
                         </ul>
                     </article>
                 </div>
@@ -169,25 +168,25 @@
 
         <!-- inner-section:starts -->
         <footer>
-        <section class="inner-section foot-top">
-            <div class="container">
-                <div class="row">
-                    <article class="col-md-12 text-center">
-                        <ul class="foot-social">
-                            <li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/01.png"></a></li>
-                            <li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/02.png"></a></li>
-                            <li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/03.png"></a></li>
-                            <li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/04.png"></a></li>
-                        </ul>
-                    </article>
+            <section class="inner-section foot-top trans-dark">
+                <div class="container">
+                    @*<div class="row">
+                        <article class="col-md-12 text-center">
+                            <ul class="foot-social">
+                                <li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/01.png"></a></li>
+                                <li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/02.png"></a></li>
+                                <li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/03.png"></a></li>
+                                <li><a href="#"><img data-no-retina alt="odin" title="odin" src="~/images/social/04.png"></a></li>
+                            </ul>
+                        </article>
+                    </div>*@
+                    <div class="row">
+                        <article class="col-md-12 text-center foot-logos">
+                            <p class="credits white">Designed by Anton Bronnfjell. Copyright &copy; 2022</p>
+                        </article>
+                    </div>
                 </div>
-                <div class="row">
-                    <article class="col-md-12 text-center foot-logos">
-                        <p class="credits">A premium template by Designova. Copyright &copy; 2015</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+            </section>
         <!-- inner-section:ends -->
         </footer>
 

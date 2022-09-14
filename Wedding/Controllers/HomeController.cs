@@ -29,8 +29,12 @@ namespace Wedding.Controllers
         { 
             List<Redeem> _redeemCode = _context.Redeems.ToList();
             List<Guest> _guestUser = _context.Guests.ToList();
+            List<Peer> _peerUser = _context.Peers.ToList();
+            List<Kid> _kidUser = _context.Kids.ToList();
 
             List<Guest> _viewBagGuest = new List<Guest>();
+            List<Peer> _viewBagPeer = new List<Peer>();
+            List<Kid> _viewBagKid = new List<Kid>();
             foreach (Redeem redeem in _redeemCode)
             {
                 if (redeem.Code.Equals(Uuid))
@@ -44,8 +48,26 @@ namespace Wedding.Controllers
                     }
                 }
             }
-            
+
+            foreach (Peer peer in _peerUser)
+            {
+                if (peer.Id.Equals(_viewBagGuest.First().Code))
+                {
+                    _viewBagPeer.Add(peer);
+                }
+            }
+
+            foreach (Kid kid in _kidUser)
+            {
+                if (kid.Id.Equals(_viewBagGuest.First().Code))
+                {
+                    _viewBagKid.Add(kid);
+                }
+            }
+
             ViewBag.Guests = _viewBagGuest;
+            ViewBag.Peer = _viewBagPeer;
+            ViewBag.Kid = _viewBagKid;
 
             return View();
         }
