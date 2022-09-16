@@ -4,8 +4,9 @@ services:
   wedding:
     image: ${DOCKER_REGISTRY-}wedding
     ports:
-      - 80
-      - 443
+    #bind [host port]:[container port]
+      - 49269
+      - 44374
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
