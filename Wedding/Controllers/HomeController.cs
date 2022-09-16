@@ -26,7 +26,8 @@ namespace Wedding.Controllers
 
         [Route("Invitation/{Uuid}")]
         public ActionResult Index(Guid Uuid)
-        { 
+        {
+            bool _contains = false;
             List<Redeem> _redeemCode = _context.Redeems.ToList();
             List<Guest> _guestUser = _context.Guests.ToList();
             List<Peer> _peerUser = _context.Peers.ToList();
@@ -35,33 +36,45 @@ namespace Wedding.Controllers
             List<Guest> _viewBagGuest = new List<Guest>();
             List<Peer> _viewBagPeer = new List<Peer>();
             List<Kid> _viewBagKid = new List<Kid>();
+
             foreach (Redeem redeem in _redeemCode)
             {
-                if (redeem.Code.Equals(Uuid))
+                if (redeem.Equals(Uuid))
                 {
-                    foreach(Guest guest in _guestUser)
+                    _contains = true;
+                }
+            }
+
+            if (_contains)
+            {
+                foreach (Redeem redeem in _redeemCode)
+                {
+                    if (redeem.Code.Equals(Uuid))
                     {
-                        if(guest.Code.Equals(redeem.Id))
+                        foreach (Guest guest in _guestUser)
                         {
-                            _viewBagGuest.Add(guest);
+                            if (guest.Code.Equals(redeem.Id))
+                            {
+                                _viewBagGuest.Add(guest);
+                            }
                         }
                     }
                 }
-            }
 
-            foreach (Peer peer in _peerUser)
-            {
-                if (peer.Id.Equals(_viewBagGuest.First().Code))
+                foreach (Peer peer in _peerUser)
                 {
-                    _viewBagPeer.Add(peer);
+                    if (peer.Id.Equals(_viewBagGuest.First().Code))
+                    {
+                        _viewBagPeer.Add(peer);
+                    }
                 }
-            }
 
-            foreach (Kid kid in _kidUser)
-            {
-                if (kid.Id.Equals(_viewBagGuest.First().Code))
+                foreach (Kid kid in _kidUser)
                 {
-                    _viewBagKid.Add(kid);
+                    if (kid.Id.Equals(_viewBagGuest.First().Code))
+                    {
+                        _viewBagKid.Add(kid);
+                    }
                 }
             }
 
