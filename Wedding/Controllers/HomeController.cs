@@ -39,7 +39,7 @@ namespace Wedding.Controllers
 
             foreach (Redeem redeem in _redeemCode)
             {
-                if (redeem.Equals(Uuid))
+                if (redeem.Code.Equals(Uuid))
                 {
                     _contains = true;
                 }
@@ -99,6 +99,22 @@ namespace Wedding.Controllers
         public IActionResult Error()
         {
             return View(/*new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier }*/);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Uuid")] Attendance attendance, Guid guid)
+        {
+            if (ModelState.IsValid)
+            {
+                attendance.Uuid = guid;
+                _context.Add(attendance);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["Uuid"] = new SelectList(_context.Extras, "Uuid", "User", attendance.Uuid);
+            ViewData["Uuid"] = new SelectList(_context.Guests, "Uuid", "User", attendance.Uuid);
+            return View;
         }
     }
 }
