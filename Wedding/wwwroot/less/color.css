@@ -86,13 +86,13 @@
   background-color: #2d2d2d;
 }
 .intro .mouse-icon.white {
-  border-color: #2d2d2d;
+  border-color: #FFFFFF;
 }
 .intro .mouse-icon.white .wheel {
-  background-color: #2d2d2d;
+  background-color: #FFFFFF;
 }
 .intro .mouse-icon.white:hover .wheel {
-  background-color: #2d2d2d;
+  background-color: #FFFFFF;
 }
 .features-details {
   border-color: #E6C7C2;

@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  wedding:
+    image: ${DOCKER_REGISTRY-}wedding
+    ports:
+    #bind [host port]:[container port]
+      - 49269
+      - 44374
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=p402Escalante
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/a-n_ddns_net.p7b
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    build:
+      context: .
+      dockerfile: Wedding/Dockerfile

@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using Wedding.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<WeddingContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DevServer")));
 
 var app = builder.Build();
 
@@ -19,6 +24,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+//app.MapGet("/invitation/{qr:guid}", (string qr) => $"{qr}");
 
 app.MapControllerRoute(
     name: "default",

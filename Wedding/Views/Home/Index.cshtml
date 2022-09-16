@@ -1,5 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    List<Guest> _guests = ViewBag.Guests;
+    List<Peer> _peers = ViewBag.Peer;
+    List<Kid> _kids = ViewBag.Kid;
 }
 
 <section id="timer" class="page about white-bg">
@@ -9,7 +12,7 @@
         <div class="item about-carousel-item">
             <div class="row">
                 <article class="col-md-8 col-md-offset-2 main-caps text-center js-counter" data-date="2022/10/1">
-                    <img alt="odin" title="odin" src="images/badge-dark.png" />
+                    <img alt="odin" title="odin" src="~/images/badge-dark.png" />
                     <br />
                     <div class="liner color-bg"></div>
                     <h6 class="dark animated" data-fx="fadeInUp">La fecha se acerca, acompañanos en este dia especial.</h6>
@@ -130,7 +133,6 @@
                             <h5 class="dark">Nohemi</h5>
                             <i>Click para leer</i>
                         </article>
-
                     </div>
                 </article>
             </div>
@@ -178,7 +180,7 @@
 
 
 
-<div class="promo-section intermediate-section action-text parallax">
+@*<div class="promo-section intermediate-section action-text parallax">
 
     <div class="container">
         <div class="row">
@@ -246,7 +248,7 @@
             </article>
         </div>
     </div>
-</section>
+</section>*@
 <!-- inner-section:ends -->
 <!-- page-section : starts -->
 <section id="location" class="page portfolio page-section remove-pad-bottom white-bg">
@@ -258,7 +260,7 @@
                 <article class="col-md-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
                     <h3 class="dark"><span>Ubicaciones</span></h3>
                     <div class="liner color-bg"></div>
-                    <p class="grey">Lorem ipsum dolor.</p>
+                    <p class="grey">Para ver los lugares da click en las fotos y aparecera el mapa del lugar.</p>
                 </article>
             </div>
         </div>
@@ -280,16 +282,18 @@
         <div id="filter" class="clearfix">
             <div id="filter_wrapper">
                 <ul id="portfolioFilter">
-                    @*<li class="filter" data-filter="all">All</li>*@
-                    <li class="filter"><a class="black" href="https://www.google.com/maps/place/4ta+Iglesia+Apost%C3%B3lica+de+la+Fe+en+Cristo+Jesus/@@31.2913767,-110.9751105,17z/data=!3m1!4b1!4m5!3m4!1s0x86d1533f38b72da3:0x7697ffc49c90c37c!8m2!3d31.2913177!4d-110.9729621" target="_blank">Ceremonia</a></li>
-                    <li class="filter"><a class="black" href="https://www.google.com/maps/place/La+Quinta+Colonial/@@31.3112985,-110.846012,17z/data=!3m1!4b1!4m5!3m4!1s0x86d14d01c09e585b:0xc82b52ab9c3c965b!8m2!3d31.3112985!4d-110.8438233" target="_blank">Festejo</a></li>
+                    <li class="filter" data-filter="all">Todo</li>
+                    <li class="filter" data-filter="category1">Ceremonia</li>
+                    <li class="filter" data-filter="category2">Celebracion</li>
+                    @*<li class="filter"><a class="black" href="https://www.google.com/maps/place/4ta+Iglesia+Apost%C3%B3lica+de+la+Fe+en+Cristo+Jesus/@@31.2913767,-110.9751105,17z/data=!3m1!4b1!4m5!3m4!1s0x86d1533f38b72da3:0x7697ffc49c90c37c!8m2!3d31.2913177!4d-110.9729621" target="_blank">Ceremonia</a></li>
+                    <li class="filter"><a class="black" href="https://www.google.com/maps/place/La+Quinta+Colonial/@@31.3112985,-110.846012,17z/data=!3m1!4b1!4m5!3m4!1s0x86d14d01c09e585b:0xc82b52ab9c3c965b!8m2!3d31.3112985!4d-110.8438233" target="_blank">Festejo</a></li>*@
                 </ul>
             </div>
         </div>
         <!-- End: Filter -->
 
 
-        @*<section id="portfolio-wrap">
+        <section id="portfolio-wrap">
 
 
 
@@ -337,7 +341,7 @@
 
 
         </section>
-        <!-- End: Portfolio Wrap -->*@
+        <!-- End: Portfolio Wrap -->
 
 
     </section>
@@ -374,9 +378,9 @@
         <div class="container">
             <div class="row">
                 <article class="col-md-8 col-md-offset-2 text-center animated" data-fx="fadeInDown">
-                    <h3 class="dark"><span>The Team</span></h3>
+                    <h3 class="dark"><span>Cortejo</span></h3>
                     <div class="liner color-bg"></div>
-                    <p class="grey">Odin is a ditial interactive studio from Amsterdam.</p>
+                    <p class="grey">Caballeros y Damas, le damos gracias a Dios por permitirinos celebrar este gran dia juntos con nuestros sere queridos.</p>
                 </article>
             </div>
         </div>
@@ -392,60 +396,60 @@
 
                         <!-- item:starts -->
                         <div class="item team-carousel-item team-stage">
-                            <img data-no-retina alt="odin" title="odin" class="img-responsive" src="https://placehold.co/300x300" />
-                            <h3 class="dark">Luis Heinz</h3>
-                            <h6><span>Founder / Director</span></h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                            <h3 class="dark">Andres Escalante</h3>
+                            <h6><span>Caballero de Honor</span></h6>
                         </div>
                         <!-- item:ends -->
                         <!-- item:starts -->
                         <div class="item team-carousel-item team-stage">
-                            <img data-no-retina alt="odin" title="odin" class="img-responsive" src="https://placehold.co/300x300" />
-                            <h3 class="dark">Joana Drew</h3>
-                            <h6><span>General Manager</span></h6>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                            <h3 class="dark">Misael Gil</h3>
+                            <h6><span>Caballero del Novio</span></h6>
                         </div>
                         <!-- item:ends -->
                         <!-- item:starts -->
                         <div class="item team-carousel-item team-stage">
-                            <img data-no-retina alt="odin" title="odin" class="img-responsive" src="https://placehold.co/300x300" />
-                            <h3 class="dark">Sam Nell</h3>
-                            <h6><span>Senior Designer</span></h6>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                            <h3 class="dark">Francisco Baez</h3>
+                            <h6><span>Caballero</span></h6>
                         </div>
                         <!-- item:ends -->
                         <!-- item:starts -->
                         <div class="item team-carousel-item team-stage">
-                            <img data-no-retina alt="odin" title="odin" class="img-responsive" src="https://placehold.co/300x300" />
-                            <h3 class="dark">Gian Loft</h3>
-                            <h6><span>Web Developer</span></h6>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                            <h3 class="dark">Jonathan Cortez</h3>
+                            <h6><span>Caballero</span></h6>
                         </div>
                         <!-- item:ends -->
                         <!-- item:starts -->
                         <div class="item team-carousel-item team-stage">
-                            <img data-no-retina alt="odin" title="odin" class="img-responsive" src="https://placehold.co/300x300" />
-                            <h3 class="dark">Amy Lee</h3>
-                            <h6><span>Web Architect</span></h6>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                            <h3 class="dark">Neftali Cortez</h3>
+                            <h6><span>Caballero</span></h6>
                         </div>
                         <!-- item:ends -->
                         <!-- item:starts -->
                         <div class="item team-carousel-item team-stage">
-                            <img data-no-retina alt="odin" title="odin" class="img-responsive" src="https://placehold.co/300x300" />
-                            <h3 class="dark">Juan Igor</h3>
-                            <h6><span>Marketing Guy</span></h6>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                            <h3 class="dark">Ruth Gomez</h3>
+                            <h6><span>Dama de Honor</span></h6>
                         </div>
                         <!-- item:ends -->
-
-
-
+                        <div class="item team-carousel-item team-stage">
+                            <h3 class="dark">Pauline Revilla</h3>
+                            <h6><span>Dama</span></h6>
+                        </div>
+                        <!-- item:ends -->
+                        <div class="item team-carousel-item team-stage">
+                            <h3 class="dark">Merari Reyes</h3>
+                            <h6><span>Dama</span></h6>
+                        </div>
+                        <!-- item:ends -->
+                        <div class="item team-carousel-item team-stage">
+                            <h3 class="dark">Flor Baez</h3>
+                            <h6><span>Dama</span></h6>
+                        </div>
+                        <!-- item:ends -->
+                        <div class="item team-carousel-item team-stage">
+                            <h3 class="dark">Daniela Ochoa</h3>
+                            <h6><span>Dama</span></h6>
+                        </div>
+                        <!-- item:ends -->
 
                     </div>
                     <!-- carouesel:ends -->
@@ -459,132 +463,93 @@
 </section>
 <!-- page-section : ends -->
 <!-- page-section : starts -->
-<section id="news" class="page news page-section remove-pad-bottom silver-bg">
+@if (ViewBag.Guests != null)
+{
+    <section id="news" class="page news page-section remove-pad-bottom silver-bg">
 
 
-    <!-- inner-section:starts -->
-    <section class="inner-section promo-text">
-        <div class="container">
-            <div class="row">
-                <article class="col-md-8 col-md-offset-2 text-center animated" data-fx="fadeInDown">
-                    <h3 class="dark"><span>Invitados</span></h3>
-                    <div class="liner color-bg"></div>
-                    <p class="dark">En este QR se listaron N invitados. <i>Click para confirmar asistencia.</i></p>
-                </article>
+        <!-- inner-section:starts -->
+        <section class="inner-section promo-text">
+            <div class="container">
+                <div class="row">
+                    <article class="col-md-8 col-md-offset-2 text-center animated" data-fx="fadeInDown">
+                        <h3 class="dark"><span>Invitados</span></h3>
+                        <div class="liner color-bg"></div>
+                        <p class="dark">En este QR se listaron @ViewBag.Guests.Count invitados. <i>Click para confirmar asistencia.</i></p>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- inner-section:ends -->
-    <!-- inner-section:starts -->
-    <section class="inner-section team-wrap add-top-half pad-bottom">
-        <div class="container">
-            <div class="row">
-                <article class="col-md-6 text-left">
-                    <div>
-                        <div class="news-post white-bg text-left">
-                            <h6 class="dark"><b>Antonio Escalante</b></h6>
-                            <div class="liner color-bg"></div>
-                            <br />
-                            <span class="badge"><i>En espera de confirmacion...</i></span>
-                            <br />
-                            <hr />
-                            <a class="btn btn-block btn-odin btn-odin-color">Confirmar Asistencia</a>
-                        </div>
+        </section>
+        <!-- inner-section:ends -->
+        <!-- inner-section:starts -->
+        <section class="inner-section team-wrap add-top-half pad-bottom">
+            <div class="container">
+                <div class="row">
+                    @foreach (Guest guest in ViewBag.Guests)
+                    {
+
+                        <article class="col-md-6 text-left">
+                            <div>
+                                <div class="news-post white-bg text-left">
+                                    <h6 class="dark"><b>@guest.User</b></h6>
+                                    <div class="liner color-bg"></div>
+                                    <br />
+                                    <span class="badge"><i>En espera de confirmacion...</i></span>
+                                    <br />
+                                    <hr />
+                                    <a class="btn btn-block btn-odin btn-odin-color">Confirmar Asistencia</a>    
+                                </div>
+                            </div>
+                        </article>
+                    }
+                </div>
+                @if (_kids.Count != 0)
+                {
+                    <div class="row add-top-quarter">
+                        <article class="col-md-6 col-md-offset-3 text-left">
+                            <div class="news-post white-bg text-left">
+                                 <h6 class="dark">Niños contemplados.</h6>
+                                 <div class="liner color-bg"></div>
+                                 <h3 class="dark">Cantidad limite: <b>@_kids.First().Quantity</b></h3>
+                            </div>
+                        </article>
                     </div>
-                </article>
-                <article class="col-md-6 text-left">
-                    <a href="post.html">
-                        <div class="news-post white-bg text-left">
-                            <h6 class="dark">12 March, 2015</h6>
-                            <div class="liner color-bg"></div>
-                            <h3 class="dark">A simple news title goes here like this in two or more lines</h3>
-                        </div>
-                    </a>
-                </article>
+                }
+                @if (_peers.Count != 0)
+                {
+                    <div class="row add-top-quarter">
+                        <article class="col-md-6 col-md-offset-3 text-left">
+                            <div class="news-post white-bg text-left">
+                                 <h6 class="dark">Acompañantes contemplados.</h6>
+                                 <div class="liner color-bg"></div>
+                                 <h3 class="dark">Cantidad limite: <b>@_peers.First().Quantity</b></h3>
+                            </div>
+                        </article>
+                    </div>
+                }
             </div>
-            <div class="row add-top-quarter">
-                <article class="col-md-6 col-md-offset-3 text-left">
-                    <a href="post.html">
-                        <div class="news-post white-bg text-left">
-                            <h6 class="dark">12 March, 2015</h6>
-                            <div class="liner color-bg"></div>
-                            <h3 class="dark">A simple news title goes here like this in two or more lines</h3>
-                        </div>
-                    </a>
-                </article>
-            </div>
-        </div>
+        </section>
+        <!-- inner-section:ends -->
+
+
     </section>
-    <!-- inner-section:ends -->
-
-
-</section>
+}
 <!-- page-section : ends -->
 
 
 
 
-<section id="contact" class="contact page intermediate-section full-height parallax">
+<section id="contact" class="contact page intermediate-section full-height parallax trans-dark">
 
     <div class="container valign">
         <div class="row">
             <article class="col-md-8 col-md-offset-2 main-caps text-center">
-                <h3 class="white animated" data-fx="fadeInUp"><span>Say Hello</span></h3>
+                <h3 class="white animated" data-fx="fadeInUp"><span>Gracias</span></h3>
                 <div class="liner color-bg"></div>
-                <h4 class="white animated" data-fx="fadeInUp">hello@odin.tld</h4>
-                <p class="white animated" data-fx="fadeInUp">Odin Inc, 22 Heinzenweil, Berlin, Germany</p>
+                <h4 class="white animated" data-fx="fadeInUp">#Antonio&NohemiWedding</h4>
+                <p class="white animated" data-fx="fadeInUp">Esperamos tu asistencia. :)</p>
             </article>
         </div>
     </div>
 
 </section>
-
-
-
-
-<section id="contact-form" class="contact-form black-bg page-section">
-
-    <div class="container">
-        <div class="row">
-            <article class="col-md-8 col-md-offset-2 main-caps text-center">
-                <div class="contact-item pad-common ">
-                    <div class="alert alert-error error " id="fname">
-                        <p>Name must not be empty</p>
-                    </div>
-                    <div class="alert alert-error  error" id="fmail">
-                        <p>Please provide a valid email</p>
-                    </div>
-                    <div class="alert alert-error  error" id="fmsg">
-                        <p>Message should not be empty</p>
-                    </div>
-                    <form name="myform" id="contactForm" action="sendcontact.php" enctype="multipart/form-data" method="post">
-                        <article>
-                            <input type="text" placeholder="Your Name" id="name" name="name" size="100">
-                        </article>
-                        <article>
-                            <input type="text" placeholder="Valid email ID" name="email" id="email" size="30">
-                        </article>
-                        <article>
-                            <textarea placeholder="Your Message" name="message" cols="40" rows="3" id="msg"></textarea>
-                            <div class="btn-wrap  text-center">
-                                <button class="btn btn-odin btn-odin-color" id="submit" name="submit" type="submit">Send Message</button>
-                            </div>
-                        </article>
-                    </form>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-
-
-
-
-@*
-<!-- page-section : starts -->
-<footer id="mastfoot" class="mastfoot white-bg">
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-*@
