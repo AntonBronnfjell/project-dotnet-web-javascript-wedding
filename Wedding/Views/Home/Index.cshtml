@@ -1,8 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    List<Attendance> _attendances = ViewBag.Attendances;
     List<Guest> _guests = ViewBag.Guests;
     List<Peer> _peers = ViewBag.Peer;
     List<Kid> _kids = ViewBag.Kid;
+    bool _exists = false;
 }
 
 <section id="timer" class="page about white-bg">
@@ -125,13 +127,13 @@
 
                         <article id="features-01" class="features-icon current col-md-4 text-center animated" data-fx="fadeInDown">
                             <a class="customLink" data-target="1"><img data-no-retina alt="odin" title="odin" src="~/images/profile/profile-1.png" /></a>
-                            <h5 class="dark">Antonio</h5>
-                            <i>Click para leer</i>
+                            <h5 class="dark" data-target="1">Antonio</h5>
+                            <i data-target="1">Click para leer</i>
                         </article>
                         <article id="features-02" class="features-icon col-md-4 text-center animated" data-fx="fadeInUp">
                             <a class="customLink" data-target="2"><img data-no-retina alt="odin" title="odin" src="~/images/profile/profile-2.png" /></a>
-                            <h5 class="dark">Nohemi</h5>
-                            <i>Click para leer</i>
+                            <h5 class="dark" data-target="2">Nohemi</h5>
+                            <i data-target="2">Click para leer</i>
                         </article>
                     </div>
                 </article>
@@ -149,13 +151,13 @@
             <ul id="features-slider">
                 <li class="features-details default" data-features-active-hover="features-01">
                     <article class="text-center">
-                        <p class="dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum eros iaculis, lacinia nibh non, scelerisque urna. In sed convallis turpis, non convallis sapien. Sed faucibus ante et felis tempor accumsan eget sed tortor.</p>
+                        <p class="dark">Casarme contigo fue la mejor decisión que pude tomar. Estoy agradecido con Dios por llevar hasta mi una persona tan maravillosa como tú. ¡Gracias por estar a mi lado!</p>
                     </article>
                 </li>
 
                 <li class="features-details default" data-features-active-hover="features-02">
                     <article class="text-center">
-                        <p class="dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum eros iaculis, lacinia nibh non, scelerisque urna. In sed convallis turpis, non convallis sapien. Sed faucibus ante et felis tempor accumsan eget sed tortor.</p>
+                        <p class="dark">Soy tan bendecida de conocer a una persona hermosa por dentro y por fuera, Dios diseña mejores historias que las que imaginamos, el amor que proviene de el siempre será perfecto, Dios estuvo desde el comienzo y estará hasta el final de este amor.</p>
                     </article>
                 </li>
             </ul>
@@ -308,7 +310,7 @@
                     <li class="folio-thumb mix category1">
                         <a href="~/projects/church.html" class="more_info">
                             <!-- Thumbnail -->
-                            <img data-no-retina alt="odin" title="odin" src="https://placehold.co/1500x1050" />
+                            <img data-no-retina alt="odin" title="odin" src="~/images/church.png" />
                             <!-- Info -->
                             <div class="item_info">
                                 <div class="valign">
@@ -323,7 +325,7 @@
                     <li class="folio-thumb mix category2">
                         <a href="~/projects/lounge.html" class="more_info">
                             <!-- Thumbnail -->
-                            <img data-no-retina alt="odin" title="odin" src="https://placehold.co/1500x1050" />
+                            <img data-no-retina alt="odin" title="odin" src="~/images/event.png" />
                             <!-- Info -->
                             <div class="item_info">
                                 <div class="valign">
@@ -351,14 +353,9 @@
         <div id="testimonial-carousel" class="testimonial-carousel owl-carousel">
 
             <div class="item stats-carousel-item testimonial-wrap">
-                <h6 class="dark">Amazed by the perfection within their themes. I recommend them.</h6>
-                <p><span>Andrew Carlson / <i>Amazing Studio.</i></span></p>
+                <h6 class="dark">El amor es sufrido, es benigno; el amor no tiene envidia, el amor no es jactancioso, no se envanece; no hace nada indebido, no busca lo suyo, no se irrita, no guarda rencor.</h6>
+                <p><span>1 Corintios <i>13:4-5.</i></span></p>
             </div>
-            <div class="item stats-carousel-item testimonial-wrap">
-                <h6 class="dark">I love designova themes. They are the top class designs I have ever seen.</h6>
-                <p><span>Sara Kent / <i>Something LLC.</i></span></p>
-            </div>
-
 
         </div>
         <!-- carousel:ends -->
@@ -465,7 +462,7 @@
 <!-- page-section : starts -->
 @if (ViewBag.Guests != null)
 {
-    <section id="news" class="page news page-section remove-pad-bottom silver-bg">
+    <section id="invitation" class="page news page-section remove-pad-bottom silver-bg">
 
 
         <!-- inner-section:starts -->
@@ -487,17 +484,34 @@
                 <div class="row">
                     @foreach (Guest guest in ViewBag.Guests)
                     {
-
                         <article class="col-md-6 text-left">
                             <div>
                                 <div class="news-post white-bg text-left">
                                     <h6 class="dark"><b>@guest.User</b></h6>
                                     <div class="liner color-bg"></div>
                                     <br />
-                                    <span class="badge"><i>En espera de confirmacion...</i></span>
-                                    <br />
-                                    <hr />
-                                    <a class="btn btn-block btn-odin btn-odin-color">Confirmar Asistencia</a>    
+                                    @foreach (Attendance attendance in _attendances)
+                                    {
+                                        if (attendance.Uuid.Equals(guest.Uuid))
+                                        {
+                                            _exists = true;
+                                        }
+                                    }
+                                    @if (_exists)
+                                    {
+                                        <a class="btn btn-block btn-odin btn-success"><i>Confirmado.</i></a>
+                                        <br />
+                                        <hr />
+                                        <a class="btn btn-block btn-odin btn-odin-color disabled" href="Guest/@guest.Uuid">Confirmar Asistencia</a>
+                                        _exists = false;
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-block btn-odin btn-primary"><i>En espera de confirmacion...</i></a>
+                                        <br />
+                                        <hr />
+                                        <a class="btn btn-block btn-odin btn-odin-color" href="Guest/@guest.Uuid">Confirmar Asistencia</a>
+                                    }
                                 </div>
                             </div>
                         </article>

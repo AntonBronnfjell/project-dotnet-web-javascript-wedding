@@ -28,6 +28,7 @@ namespace Wedding.Controllers
         public ActionResult Index(Guid Uuid)
         {
             bool _contains = false;
+            List <Attendance> _attendancesUsers = _context.Attendances.ToList();
             List<Redeem> _redeemCode = _context.Redeems.ToList();
             List<Guest> _guestUser = _context.Guests.ToList();
             List<Peer> _peerUser = _context.Peers.ToList();
@@ -39,7 +40,7 @@ namespace Wedding.Controllers
 
             foreach (Redeem redeem in _redeemCode)
             {
-                if (redeem.Equals(Uuid))
+                if (redeem.Code.Equals(Uuid))
                 {
                     _contains = true;
                 }
@@ -78,11 +79,51 @@ namespace Wedding.Controllers
                 }
             }
 
+            ViewBag.Attendances = _attendancesUsers;
             ViewBag.Guests = _viewBagGuest;
             ViewBag.Peer = _viewBagPeer;
             ViewBag.Kid = _viewBagKid;
 
             return View();
+        }
+
+        [Route("Invitation/Guest/{Uuid}")]
+        public ActionResult ConfirmGuest(Guid Uuid)
+        {
+            List<Redeem> _redeems = _context.Redeems.ToList();
+            List<Guest> _guestUser = _context.Guests.ToList();
+            int _foundRedeem = 0;
+            Guid _lastView = new Guid();
+
+            foreach (Guest guest in _guestUser)
+            {
+                if (guest.Uuid.Equals(Uuid))
+                {
+                    _foundRedeem = guest.Code;
+                }
+            }
+
+            foreach (Redeem redeem in _redeems)
+            {
+                if (redeem.Id.Equals(_foundRedeem))
+                {
+                    _lastView = redeem.Code;
+                }
+            }
+            Attendance attendance = new Attendance();
+            if (ModelState.IsValid)
+            {
+                if (!_context.Attendances.Contains(attendance))
+                {
+                    attendance.Uuid = Uuid;
+                    _context.Attendances.Add(attendance);
+                    _context.SaveChangesAsync();
+                    //return RedirectToAction(nameof(Index));
+                }
+            }
+            //ViewData["Uuid"] = new SelectList(_context.Extras, "Uuid", "User", attendance.Uuid);
+            //ViewData["Uuid"] = new SelectList(_context.Guests, "Uuid", "User", attendance.Uuid);
+            return Redirect(String.Format("/../../Invitation/{0}#invitation", _lastView));
         }
 
         public IActionResult Index()

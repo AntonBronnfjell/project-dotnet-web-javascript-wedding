@@ -21,7 +21,9 @@
 	div#portfolio_thumbs ul li{
 	width: 20%;
 	}
-
+	html, body {
+		overflow-x: hidden;
+	}
 }
 
 /*Projector Screens and Ver Large Monitors*/
@@ -31,6 +33,9 @@
 	}
 	div#portfolio_thumbs ul li{
 	width: 20%;
+	}
+	html, body {
+		overflow-x: hidden;
 	}
 }
 
@@ -42,7 +47,9 @@
 	div#portfolio_thumbs ul li{
 	width: 20%;
 	}
-
+	html, body {
+		overflow-x: hidden;
+	}
 }
 
 /*Large Widescreen Monitors*/
@@ -52,6 +59,9 @@
 	}
 	div#portfolio_thumbs ul li{
 	width: 20%;
+	}
+	html, body {
+		overflow-x: hidden;
 	}
 }
 
@@ -63,6 +73,9 @@
 	div#portfolio_thumbs ul li{
 	width: 20%;
 	}
+	html, body {
+		overflow-x: hidden;
+	}
 }
 
 /*Large Widescreen Laptops*/
@@ -72,6 +85,9 @@
 	}
 	div#portfolio_thumbs ul li{
 	width: 25%;
+	}
+	html, body {
+		overflow-x: hidden;
 	}
 }
 
@@ -83,6 +99,9 @@
 	div#portfolio_thumbs ul li{
 	width: 25%;
 	}
+	html, body {
+		overflow-x: hidden;
+	}
 }
 
 
@@ -93,6 +112,9 @@
 	}
 	div#portfolio_thumbs ul li{
 	width: 25%;
+	}
+	html, body {
+		overflow-x: hidden;
 	}
 }
 
@@ -106,6 +128,9 @@
 	}
 	div#portfolio_thumbs ul li{
 	width: 33%;
+	}
+	html, body {
+		overflow-x: hidden;
 	}
 }
 
@@ -131,6 +156,9 @@
 	}
 	.standard-header{
 		display: none !important;
+	}
+	html, body {
+		overflow-x: hidden;
 	}
 }
 
@@ -159,6 +187,9 @@
 	}
 	.standard-header{
 		display: none !important;
+	}
+	html, body {
+		overflow-x: hidden;
 	}
 	
 }
@@ -242,7 +273,9 @@
 	.standard-header{
 		display: none !important;
 	}
-	
+	html, body {
+		overflow-x: hidden;
+	}
 }
 
 
@@ -329,7 +362,9 @@
 	.news-post{
 		margin-top: 20px;
 	}
-	
+	html, body {
+		overflow-x: hidden;
+	}
 }
 
 
@@ -471,6 +506,9 @@
 	.news-post{
 		margin-top: 20px;
 	}
+	html, body {
+		overflow-x: hidden;
+	}
 }
 
 /*iPhone 6 Landscape Mode*/
@@ -610,6 +648,9 @@
 	}
 	.news-post{
 		margin-top: 20px;
+	}
+	html, body {
+		overflow-x: hidden;
 	}
 }
 
@@ -751,6 +792,9 @@
 	.news-post{
 		margin-top: 20px;
 	}
+	html, body {
+		overflow-x: hidden;
+	}
 }
 	
 
@@ -890,6 +934,9 @@
 	}
 	.news-post{
 		margin-top: 20px;
+	}
+	html, body {
+		overflow-x: hidden;
 	}
 }
 	
@@ -1034,6 +1081,9 @@
 	.news-post{
 		margin-top: 20px;
 	}
+	html, body {
+		overflow-x: hidden;
+	}
 }
 
 
@@ -1174,6 +1224,9 @@
 	}
 	.news-post{
 		margin-top: 20px;
+	}
+	html, body {
+		overflow-x: hidden;
 	}
 }
 
@@ -1316,6 +1369,9 @@
 	.news-post{
 		margin-top: 20px;
 	}
+	html, body {
+		overflow-x: hidden;
+	}
 }
 
 /*Other Major Small Smart Phones*/
@@ -1455,6 +1511,9 @@
 	.news-post{
 		margin-top: 20px;
 	}
+	html, body {
+		overflow-x: hidden;
+	}
 }
 
 /*iPhone Portrait Mode and Very Small Mobile Phones*/
@@ -1593,6 +1652,9 @@
 	}
 	.news-post{
 		margin-top: 20px;
+	}
+	html, body {
+		overflow-x: hidden;
 	}
 }
 

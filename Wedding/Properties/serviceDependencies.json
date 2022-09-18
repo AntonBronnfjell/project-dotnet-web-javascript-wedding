@@ -5,13 +5,14 @@
       "connectionId": "Kestrel:Certificates:Development:Password",
       "dynamicId": null
     },
-    "mssql2": {
-      "type": "mssql",
-      "connectionId": "DevServer"
-    },
     "secrets1": {
       "type": "secrets",
       "connectionId": null
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DevServer",
+      "dynamicId": null
     }
   }
 }

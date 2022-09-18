@@ -2850,6 +2850,11 @@ fieldset[disabled] .btn-primary.active {
   color: #428bca;
   background-color: #fff;
 }
+.badge-success .badge {
+    color: #fff;
+    background-color: #28a745;
+}
+
 .btn-success {
   color: #fff;
   background-color: #5cb85c;
