@@ -141,5 +141,21 @@ namespace Wedding.Controllers
         {
             return View(/*new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier }*/);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Uuid")] Attendance attendance, Guid guid)
+        {
+            if (ModelState.IsValid)
+            {
+                attendance.Uuid = guid;
+                _context.Add(attendance);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["Uuid"] = new SelectList(_context.Extras, "Uuid", "User", attendance.Uuid);
+            ViewData["Uuid"] = new SelectList(_context.Guests, "Uuid", "User", attendance.Uuid);
+            return View;
+        }
     }
 }
